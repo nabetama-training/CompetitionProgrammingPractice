@@ -5,4 +5,6 @@ def resolve():
         print("Even")
     else:
         print("Odd")
+
+
 resolve()
