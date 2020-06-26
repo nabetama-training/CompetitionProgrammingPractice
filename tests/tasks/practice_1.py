@@ -2,7 +2,7 @@ import sys
 from io import StringIO
 import unittest
 
-from src.atcoder.practice_1 import resolve
+from src.atcoder.tasks.practice_1 import resolve
 
 class TestClass(unittest.TestCase):
     def assertIO(self, input, output):

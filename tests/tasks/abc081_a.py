@@ -2,7 +2,7 @@ import sys
 from io import StringIO
 import unittest
 
-from src.atcoder.abc081_a import resolve
+from src.atcoder.tasks.abc081_a import resolve
 
 
 class TestClass(unittest.TestCase):
