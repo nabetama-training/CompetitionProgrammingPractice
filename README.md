@@ -1,4 +1,4 @@
-# algorithm-data-structure
+# competitive-programming-study
 
-AtCoder Problems
-https://kenkoooo.com/atcoder/#/table/
+* [atCoder](https://atcoder.jp)
+* [AtCoder Problems](https://kenkoooo.com/atcoder/#/table/)
