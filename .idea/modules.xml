@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/kyo-pro-python.iml" filepath="$PROJECT_DIR$/.idea/kyo-pro-python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/competitive-programming-study.iml" filepath="$PROJECT_DIR$/.idea/competitive-programming-study.iml" />
     </modules>
   </component>
 </project>
