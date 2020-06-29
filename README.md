@@ -1,4 +1,6 @@
-# competitive-programming-study
+# CompetitionProgrammingPractice
 
-* [atCoder](https://atcoder.jp)
+## AtCoder
+
+* [AtCoder](https://atcoder.jp)
 * [AtCoder Problems](https://kenkoooo.com/atcoder/#/table/)
