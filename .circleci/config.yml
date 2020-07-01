@@ -1,19 +1,14 @@
 version: 2 # CircleCI 2.0 を使用します
-jobs: # 1回の実行の基本作業単位
-  build: # Workflows を使用しない実行では、エントリポイントとして `build` ジョブが必要
-    # ステップが実行されるディレクトリ
+jobs:
+  build:
     working_directory: ~/project
-    docker: # Docker でステップを実行します
-      # CircleCI Python イメージは https://hub.docker.com/r/circleci/python/ で入手できます
+    docker:
       - image: circleci/python:3.7.0
-        environment: # プライマリコンテナの環境変数
-          PIPENV_VENV_IN_PROJECT: true
-    steps: # `build` ジョブを構成するステップ
-      - checkout # ソースコードを作業ディレクトリにチェックアウトします
+    steps:
+      - checkout
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
       - restore_cache:
-      # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           command: |
@@ -27,10 +22,10 @@ jobs: # 1回の実行の基本作業単位
             - "/usr/local/lib/python3.6/site-packages"
       - run:
           command: |
-            pipenv run python manage.py test
-      - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
+            python -m unittest
+      - store_test_results:
           path: test-results
-      - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
+      - store_artifacts:
           path: test-results
           destination: tr1
 
