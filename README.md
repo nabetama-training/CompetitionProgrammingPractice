@@ -1,4 +1,4 @@
-# CompetitionProgrammingPractice
+# CompetitionProgrammingPractice [![](https://circleci.com/gh/nabetama-training/CompetitionProgrammingPractice.svg?style=svg)](https://circleci.com/gh/nabetama-training/CompetitionProgrammingPractice)
 
 ## AtCoder
 
