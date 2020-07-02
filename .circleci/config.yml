@@ -23,6 +23,9 @@ jobs:
       - run:
           command: |
             python -m unittest
+      - run:
+          command: |
+            bash <(curl -s https://codecov.io/bash)
       - store_test_results:
           path: test-results
       - store_artifacts:
