@@ -14,6 +14,12 @@ jobs:
           command: |
             sudo pip install pipenv
             pipenv install
+      - run:
+          - name: install deps at .venv
+          - command: |
+              python3 -m venv .venv
+              . .venv/bin/activate
+              pip install -r requirements.txt
       - save_cache: # Pipfile のチェックサムをキャッシュキーとして使用して、Python の依存関係をキャッシュします
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
