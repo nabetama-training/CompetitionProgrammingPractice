@@ -2,7 +2,7 @@ import sys
 from io import StringIO
 import unittest
 
-from src.AOJ.ITP1_2_C import resolve
+from src.AOJ.ITP1_2_C import resolve, bubble_sort, insertion_sort
 
 
 class TestClass(unittest.TestCase):
@@ -29,3 +29,15 @@ class TestClass(unittest.TestCase):
         input = """8 3 1"""
         output = """1 3 8"""
         self.assertIO(input, output)
+
+    def test_bubble_sort1(self):
+        self.assertEqual([1, 3, 8], bubble_sort([3, 8, 1]))
+
+    def test_bubble_sort2(self):
+        self.assertEqual([0], bubble_sort([0]))
+
+    def test_insertion_sort1(self):
+        self.assertEqual([1, 3, 8], insertion_sort([3, 8, 1]))
+
+    def test_insertion_sort2(self):
+        self.assertEqual([0], insertion_sort([0]))

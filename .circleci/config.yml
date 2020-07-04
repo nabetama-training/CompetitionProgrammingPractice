@@ -22,7 +22,8 @@ jobs:
             - "/usr/local/lib/python3.6/site-packages"
       - run:
           command: |
-            python -m unittest
+            coverage run -m unittest discover
+            coverage report
       - store_test_results:
           path: test-results
       - store_artifacts:
