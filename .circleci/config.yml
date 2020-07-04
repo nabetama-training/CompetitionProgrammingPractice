@@ -39,4 +39,8 @@ jobs:
           destination: tr1
       - store_artifacts:
           path: htmlcov
+      - run:
+          name: upload code coverage reports
+          commnad: |
+            bash <(curl -s https://codecov.io/bash)
 
