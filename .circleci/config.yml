@@ -42,5 +42,4 @@ jobs:
       - run:
           name: upload code coverage reports
           command: |
-            bash <(curl -s https://codecov.io/bash)
-
+            .venv/bin/codecov --token=$CODECOV_TOKEN
