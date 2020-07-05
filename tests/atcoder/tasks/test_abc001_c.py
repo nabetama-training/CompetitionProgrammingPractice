@@ -54,7 +54,3 @@ class TestClass(unittest.TestCase):
         input = """2048 16"""
         output = """SSW 1"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()

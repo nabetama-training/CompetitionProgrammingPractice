@@ -15,7 +15,7 @@ class TestClass(unittest.TestCase):
         sys.stdout, sys.stdin = stdout, stdin
         self.assertEqual(out, output)
 
-    def test_入力例_1(self):
+    def test_1(self):
         input = """15
 10"""
         output = """5"""
@@ -32,7 +32,3 @@ class TestClass(unittest.TestCase):
 20"""
         output = """-15"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()

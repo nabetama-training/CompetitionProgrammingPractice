@@ -29,7 +29,3 @@ class TestClass(unittest.TestCase):
         input = """298 520 903 520 4 663"""
         output = """43257.5"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()

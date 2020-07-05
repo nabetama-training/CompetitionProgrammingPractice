@@ -4,6 +4,7 @@ import unittest
 
 from src.atcoder.tasks.abc083_b import resolve
 
+
 class TestClass(unittest.TestCase):
     def assertIO(self, input, output):
         stdout, stdin = sys.stdout, sys.stdin
@@ -28,7 +29,3 @@ class TestClass(unittest.TestCase):
         input = """100 4 16"""
         output = """4554"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()

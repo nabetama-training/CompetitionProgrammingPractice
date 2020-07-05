@@ -54,6 +54,3 @@ class TestClass(unittest.TestCase):
 0100-0101"""
         output = """0100-0105"""
         self.assertIO(input, output)
-
-if __name__ == "__main__":
-    unittest.main()

@@ -34,7 +34,3 @@ class TestClass(unittest.TestCase):
         input = """mazushii"""
         output = """mzsh"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()

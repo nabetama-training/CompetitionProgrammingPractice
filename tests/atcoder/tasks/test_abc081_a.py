@@ -24,7 +24,3 @@ class TestClass(unittest.TestCase):
         input = """000"""
         output = """0"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()

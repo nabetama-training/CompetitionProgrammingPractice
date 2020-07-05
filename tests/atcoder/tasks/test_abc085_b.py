@@ -43,7 +43,3 @@ class TestClass(unittest.TestCase):
 30"""
         output = """4"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()

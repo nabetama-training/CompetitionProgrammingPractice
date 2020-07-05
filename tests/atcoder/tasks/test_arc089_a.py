@@ -34,7 +34,3 @@ class TestClass(unittest.TestCase):
 100 1 1"""
         output = """No"""
         self.assertIO(input, output)
-
-
-if __name__ == "__main__":
-    unittest.main()
