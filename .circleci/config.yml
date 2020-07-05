@@ -11,21 +11,21 @@ jobs:
       - restore_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
+          name: setup pipenv
           command: |
             sudo pip install pipenv
             pipenv install
+            pipenv install -d
       - save_cache: # Pipfile のチェックサムをキャッシュキーとして使用して、Python の依存関係をキャッシュします
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
-            - ".venv"
-            - ".venv/bin"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
       - run:
           command: |
-            coverage run -m unittest discover
-            coverage report
-            coverage html
+            pipenv run coverage run -m unittest discover
+            pipenv run coverage report
+            pipenv run coverage html
       - store_test_results:
           path: test-results
       - store_artifacts:
@@ -33,4 +33,7 @@ jobs:
           destination: tr1
       - store_artifacts:
           path: htmlcov
-
+      - run:
+          name: upload code coverage reports
+          command: |
+            pipenv run codecov --token=$CODECOV_TOKEN
