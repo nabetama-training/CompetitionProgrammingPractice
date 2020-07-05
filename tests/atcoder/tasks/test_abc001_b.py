@@ -30,6 +30,15 @@ class TestClass(unittest.TestCase):
         output = """02"""
         self.assertIO(input, output)
 
+    def test_4(self):
+        input = """99"""
+        output = """00"""
+        self.assertIO(input, output)
+
+    def test_5(self):
+        input = """36000"""
+        output = """81"""
+        self.assertIO(input, output)
 
 if __name__ == "__main__":
     unittest.main()

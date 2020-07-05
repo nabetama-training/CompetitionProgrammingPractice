@@ -1,7 +1,7 @@
 from decimal import Decimal, ROUND_HALF_UP
 
 
-def get_dir(deg: int) -> str:
+def get_dir(deg: int) -> str:   # pragma: no cover
     if deg <= 0:
         return 'C'
     if deg < 11.25:
@@ -41,7 +41,7 @@ def get_dir(deg: int) -> str:
     return 'N'
 
 
-def get_wind(w: float) -> int:
+def get_wind(w: float) -> int:  # pragma: no cover
     if w <= 0.2:
         return 0
     if w <= 1.5:

@@ -23,14 +23,6 @@ def get_end(s: str) -> str:
     return "{}{}".format(format(hh, '0>2'), format(e, '0>2'))
 
 
-def get_start_idx(times: List[int]) -> int:
-    return times.index(1)
-
-
-def get_end_idx(times: List[int]) -> int:
-    return len(times) - 1 - times[::-1].index(1)
-
-
 def time_idx_to_hhmm(idx: int) -> str:
     n = idx * 5
     hh = int(n / 60)
