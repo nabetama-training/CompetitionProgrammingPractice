@@ -48,12 +48,16 @@ F
 15 15 49
 15 15 50
 15 15 51
+-1 15 51
+44 -1 51
 15 14 -1
 -1 -1 -1"""
         output = """D
 D
 C
 C
+F
+F
 F
 """
         self.assertIO(input, output)

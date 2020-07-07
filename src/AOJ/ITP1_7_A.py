@@ -33,10 +33,6 @@ def rank(m: int, f: int, r: int) -> str:
     if -1 in [m, f]:
         return 'F'
 
-    if m < 0:
-        m = 0
-    if f < 0:
-        f = 0
     if r < 0:
         r = 0
 
