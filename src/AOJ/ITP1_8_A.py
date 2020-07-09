@@ -3,10 +3,5 @@ def resolve():
 
     ret = ""
     for c in s:
-        if c.isupper():
-            ret += c.lower()
-        elif c.islower():
-            ret += c.upper()
-        else:
-            ret += c
+        ret += c.swapcase() # lower() <-> upper()
     print(ret)
