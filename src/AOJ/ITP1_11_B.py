@@ -31,7 +31,7 @@ class Dice:
         tmp[5] = self.__eyes[2]
         self.__eyes = tmp
 
-    def roll_n(self):
+    def roll_n(self):   # pragma no cover
         tmp = copy.copy(self.__eyes)
         tmp[0] = self.__eyes[1]
         tmp[1] = self.__eyes[5]
@@ -41,7 +41,7 @@ class Dice:
         tmp[5] = self.__eyes[4]
         self.__eyes = tmp
 
-    def roll_w(self):
+    def roll_w(self):   # pragma no cover
         tmp = copy.copy(self.__eyes)
         tmp[0] = self.__eyes[2]
         tmp[1] = self.__eyes[1]
@@ -80,7 +80,7 @@ class Dice:
     def front(self):
         return self.__eyes[1]
 
-    def roll(self, direction: str):
+    def roll(self, direction: str):  # pragma no cover
         if direction == 'N':
             self.roll_n()
         if direction == 'E':
