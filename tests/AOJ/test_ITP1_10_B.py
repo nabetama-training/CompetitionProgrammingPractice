@@ -26,7 +26,7 @@ class TestClass(unittest.TestCase):
 
         self.assertIO(input, output)
 
-# Circele CI と local との実行環境の差でで誤差が出る
+# Circele CI と local との実行環境の差で誤差が出る
 #     def test_2(self):
 #         input = """100 80 54
 # """
