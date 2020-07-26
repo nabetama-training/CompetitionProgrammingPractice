@@ -1,3 +1,4 @@
+import copy
 
 
 class Dice:
@@ -8,10 +9,10 @@ class Dice:
     def eyes(self):
         return self.__eyes
 
-    def top(self):
+    def top(self):  # pragma no cover
         return self.__eyes[0]
 
-    def right(self):    # pragma no cover
+    def right(self):  # pragma no cover
         return self.__eyes[2]
 
     def roll_s(self):
@@ -24,7 +25,7 @@ class Dice:
         tmp[5] = self.__eyes[1]
         self.__eyes = tmp
 
-    def roll_e(self):
+    def roll_e(self):   # pragma no cover
         tmp = copy.copy(self.__eyes)
         tmp[0] = self.__eyes[3]
         tmp[1] = self.__eyes[1]
@@ -34,7 +35,7 @@ class Dice:
         tmp[5] = self.__eyes[2]
         self.__eyes = tmp
 
-    def roll_n(self):   # pragma no cover
+    def roll_n(self):  # pragma no cover
         tmp = copy.copy(self.__eyes)
         tmp[0] = self.__eyes[1]
         tmp[1] = self.__eyes[5]
@@ -44,7 +45,7 @@ class Dice:
         tmp[5] = self.__eyes[4]
         self.__eyes = tmp
 
-    def roll_w(self):   # pragma no cover
+    def roll_w(self):  # pragma no cover
         tmp = copy.copy(self.__eyes)
         tmp[0] = self.__eyes[2]
         tmp[1] = self.__eyes[1]
@@ -64,26 +65,10 @@ class Dice:
         tmp[5] = self.__eyes[5]
         self.__eyes = tmp
 
-    def adjust_top(self, top: int):
-        for _ in range(4):
-            if self.top() is top:
-                break
-            self.roll_e()
-        for _ in range(4):
-            if self.top() is top:
-                break
-            self.roll_s()
-
-    def adjust_front(self, front: int):
-        for _ in range(4):
-            if self.front() is front:
-                break
-            self.turn_right()
-
-    def front(self):
+    def front(self):    # pragma no cover
         return self.__eyes[1]
 
-    def roll(self, direction: str):   # pragma no cover
+    def roll(self, direction: str):  # pragma no cover
         if direction.lower() == 'n':
             self.roll_n()
         if direction.lower() == 'e':
@@ -94,10 +79,36 @@ class Dice:
             self.roll_w()
 
     def __eq__(self, other):
-        if isinstance(other, Dice):
-            return self.__eyes == other.eyes
-        return False
+        # 全出目を比較する
+        is_same = False
+        for _ in range(2):
+            for _ in range(3):
+                for _ in range(4):
+                    if self.eyes == other.eyes:
+                        is_same = True
+                    self.turn_right()
+                self.roll_n()
+            self.turn_right()
+            self.roll_s()
+        return is_same
 
 
 def resolve():
-    pass
+    n = int(input())
+    dices = []
+
+    for _ in range(n):
+        eyes = list(map(int, input().split()))
+        dices.append(Dice(eyes))
+
+    found = False
+    while len(dices) > 0:
+        dice = dices.pop(0)
+        for d in dices:
+            if dice == d:
+                found = True
+
+    if found:
+        print("No")
+    else:
+        print("Yes")
